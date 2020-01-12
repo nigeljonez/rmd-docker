@@ -6,6 +6,8 @@ RUN apt-get update \
            pandoc \
            libjs-mathjax \
            fonts-mathjax-extras \
+           openssh-client \
+           git \
       && rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages(c('knitr', 'revealjs', 's20x', 'tinytex')); library(tinytex); tinytex::install_tinytex()" \
