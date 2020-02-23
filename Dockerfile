@@ -8,9 +8,11 @@ RUN apt-get update \
            fonts-mathjax-extras \
            openssh-client \
            git \
-      && rm -rf /var/lib/apt/lists/*
+      && rm -rf /var/lib/apt/lists/* \
+      && wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb \\
+      && dpkg -i pandoc-2.7.2-1-amd64.deb
 
-RUN R -e "install.packages(c('knitr', 'revealjs', 's20x', 'tinytex')); library(tinytex); tinytex::install_tinytex()" \
+RUN R -e "install.packages(c('knitr', 'revealjs', 'tinytex')); library(tinytex); tinytex::install_tinytex()" \
       && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 CMD ["R"]
