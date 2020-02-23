@@ -9,7 +9,7 @@ RUN apt-get update \
            openssh-client \
            git \
       && rm -rf /var/lib/apt/lists/* \
-      && wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb \\
+      && wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb \
       && dpkg -i pandoc-2.7.2-1-amd64.deb
 
 RUN R -e "install.packages(c('knitr', 'revealjs', 'tinytex')); library(tinytex); tinytex::install_tinytex()" \
