@@ -8,6 +8,7 @@ RUN apt-get update \
            fonts-mathjax-extras \
            openssh-client \
            git \
+           rsync \
       && rm -rf /var/lib/apt/lists/* \
       && wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb \
       && dpkg -i pandoc-2.7.2-1-amd64.deb
